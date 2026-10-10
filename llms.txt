@@ -1,0 +1,54 @@
+# Eddie Bullock
+
+> I am a PhD researcher at the University of Cambridge, writer read by 58,000+ people, and occasional ultramarathon runner.
+
+## PhD research
+
+I am a PhD student at the University of Cambridge's [Autism Research Centre](https://www.autismresearchcentre.com/people/eddie-bullock/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering studentship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them on wearable glasses at under 100 milliseconds. I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
+
+- How accurate are LLMs on multimodal theory of mind tasks: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=toL9Lq0AAAAJ&citation_for_view=toL9Lq0AAAAJ:IjCSPb-OGe4C
+- Natural language processing for analysis of electronic health records: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=toL9Lq0AAAAJ&citation_for_view=toL9Lq0AAAAJ:u-x6o8ySG0sC
+
+I work closely with [Emteq Labs](https://www.emteqlabs.com/) on this project. They make non-invasive human-computer interfaces.
+
+## Selected publications
+
+Papers are on [Google Scholar](https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en).
+
+## AI engineering internship at Minimal
+
+I worked on a vision-language-action model for an autonomous delivery robot. I built the pipelines for data collection and training, fine-tuned the model for deployment, collected synthetic data, and developed the simulation environment.
+
+Minimal: https://minimal.tech
+
+The simulation image on the site is a stand-in until real footage is added.
+
+## Writing and science communication
+
+I write about AI and neuroscience for 58,000+ people on [Bluesky](https://bsky.app/profile/eddiebullock.bsky.social) and [Substack](https://substack.com/@edbullock). I run workshops for teachers on AI and [neuroscience in schools across the UK](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=toL9Lq0AAAAJ&citation_for_view=toL9Lq0AAAAJ:d1gkVwhDpl0C), and I recently delivered them to charities in Kolkata.
+
+I host [Bridging the Gap](https://www.redcapmedia.co.uk/bridging-the-gap), a podcast of interviews with scientists.
+
+## Fun
+
+I am currently [raising money for sarcoma](https://www.justgiving.com/page/eddie-bullock-1).
+
+101km, with 3,000m of elevation, Peak District ultramarathon with Sacha.
+
+800km in 8 days for Alzheimer's. We raised £7,000. Follow the journey: https://www.instagram.com/normandynomads/
+
+I will be running the London Marathon and the Cotswold ultramarathon in 2027.
+
+Oh, and I'm also converting a classic VW T3.
+
+## Contact
+
+- Site: https://eddiebullock.com/
+- Email: eb2007@cam.ac.uk
+- Google Scholar: https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en
+- Bluesky: https://bsky.app/profile/eddiebullock.bsky.social
+- Substack: https://substack.com/@edbullock
+- LinkedIn: https://www.linkedin.com/feed/
+- GitHub: https://github.com/eddiebullock
+- Autism Research Centre: https://www.autismresearchcentre.com/people/eddie-bullock/
+- CV: https://eddiebullock.com/files/cv.pdf
