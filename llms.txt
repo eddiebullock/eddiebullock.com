@@ -6,14 +6,12 @@
 
 I am a PhD student at the University of Cambridge's [Autism Research Centre](https://www.autismresearchcentre.com/people/eddie-bullock/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering studentship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them on wearable glasses at under 100 milliseconds. I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
 
+Publications are available on [Google Scholar](https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en).
+
 - How accurate are LLMs on multimodal theory of mind tasks: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=toL9Lq0AAAAJ&citation_for_view=toL9Lq0AAAAJ:IjCSPb-OGe4C
 - Natural language processing for analysis of electronic health records: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=toL9Lq0AAAAJ&citation_for_view=toL9Lq0AAAAJ:u-x6o8ySG0sC
 
 I work closely with [Emteq Labs](https://www.emteqlabs.com/) on this project. They make non-invasive human-computer interfaces.
-
-## Selected publications
-
-Papers are on [Google Scholar](https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en).
 
 ## AI engineering internship at Minimal
 
