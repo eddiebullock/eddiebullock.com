@@ -4,7 +4,7 @@
 
 ## PhD research
 
-I am a PhD at [the University of Cambridge](https://www.cam.ac.uk/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering studentship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them on wearable glasses at under 100 milliseconds. I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
+I am a PhD researcher at [the University of Cambridge](https://www.autismresearchcentre.com/people/eddie-bullock/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering studentship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them on wearable glasses at under 100 milliseconds. I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
 
 Publications are available on [Google Scholar](https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en).
 
@@ -46,7 +46,7 @@ Oh, and I'm also converting a classic VW T3.
 - Google Scholar: https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en
 - Bluesky: https://bsky.app/profile/eddiebullock.bsky.social
 - Substack: https://substack.com/@edbullock
-- LinkedIn: https://www.linkedin.com/feed/
+- LinkedIn: https://www.linkedin.com/in/eddie-bullock
 - GitHub: https://github.com/eddiebullock
 - Autism Research Centre: https://www.autismresearchcentre.com/people/eddie-bullock/
 - CV: https://eddiebullock.com/files/cv.pdf
