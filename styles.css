@@ -2,12 +2,23 @@
   --bg: #fbfaf9;
   --text: #1c1917;
   --accent: #0645ad;
+  --surface: #fff;
   --rule: rgba(28, 25, 23, 0.16);
   --target: rgba(6, 69, 173, 0.08);
   color-scheme: light;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --measure: 40rem;
   --space: 1rem;
+}
+
+html[data-theme="dark"] {
+  --bg: #141210;
+  --text: #f4f1ee;
+  --accent: #8eb6ff;
+  --surface: #221f1c;
+  --rule: rgba(244, 241, 238, 0.18);
+  --target: rgba(142, 182, 255, 0.16);
+  color-scheme: dark;
 }
 
 *,
@@ -143,9 +154,41 @@ a.portrait img {
   color: var(--accent);
 }
 
-.contacts svg {
+.contacts svg,
+.theme svg {
   width: 22px;
   height: 22px;
+}
+
+.theme {
+  position: fixed;
+  top: max(0.9rem, env(safe-area-inset-top));
+  right: max(0.9rem, env(safe-area-inset-right));
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 0;
+}
+
+.theme:hover {
+  color: var(--accent);
+}
+
+html[data-theme="dark"] .theme-moon,
+html:not([data-theme="dark"]) .theme-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .logos img {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .lede,
@@ -248,6 +291,28 @@ main img {
   background: #fff;
 }
 
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+}
+
+.trio picture {
+  margin: 0;
+  height: 6.5rem;
+  min-width: 0;
+}
+
+.trio img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
 img.full {
   max-height: none;
   height: auto;
@@ -313,7 +378,7 @@ img.product {
   min-height: 0;
   padding: 0.4rem 0.4rem 0.7rem;
   color: var(--text);
-  background: #fff;
+  background: var(--surface);
 }
 
 .card.stack img {
