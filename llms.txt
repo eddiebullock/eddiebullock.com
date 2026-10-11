@@ -4,7 +4,7 @@
 
 ## PhD research
 
-I am a PhD researcher at [the University of Cambridge](https://www.autismresearchcentre.com/people/eddie-bullock/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering studentship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them on wearable glasses at under 100 milliseconds. I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
+I am a PhD researcher at [the University of Cambridge](https://www.autismresearchcentre.com/people/eddie-bullock/), funded by a Medical Research Council industrial Collaborative Award in Science and Engineering scholarship. I work on vision-language models. I am building end-to-end world models that interpret social interaction, and deploying them to run on wearable glasses at low latency (100 ms). I also do mechanistic interpretability on how these models represent a social scene. We collaborate closely with AI researchers at Stanford and Harvard.
 
 Publications are available on [Google Scholar](https://scholar.google.com/citations?user=toL9Lq0AAAAJ&hl=en).
 
@@ -15,7 +15,7 @@ I work closely with [Emteq Labs](https://www.emteqlabs.com/) on this project. Th
 
 ## AI engineering internship at Minimal
 
-I worked on a vision-language-action model for an autonomous delivery robot. I built the pipelines for data collection and training, fine-tuned the model for deployment, collected synthetic data, and developed the simulation environment.
+I am working on a vision-language-action model for an autonomous delivery robot. I am building the pipelines for data collection and training, fine-tuning the model for deployment, collecting synthetic data, and developing the simulation environment.
 
 Minimal: https://minimal.tech
 
@@ -37,7 +37,7 @@ I am currently [raising money for sarcoma](https://www.justgiving.com/page/eddie
 
 I will be running the London Marathon and the Cotswold ultramarathon in 2027.
 
-Oh, and I'm also converting a classic VW T3.
+I'm also converting a classic VW T3.
 
 ## Contact
 
