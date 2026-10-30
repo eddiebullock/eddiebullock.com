@@ -291,26 +291,50 @@ main img {
 }
 
 .reel {
-  margin: 0 0 0.85rem;
+  position: relative;
+  container-type: inline-size;
+  margin: 0 0 1.25rem;
 }
 
 .reel-viewport {
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0.25rem 0 0.5rem;
+  -webkit-overflow-scrolling: touch;
 }
 
-.reel-track {
-  display: flex;
-  transition: transform 0.35s ease;
+.reel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.reel-viewport:focus-visible {
+  outline-offset: 2px;
 }
 
 .reel-slide {
-  flex: 0 0 100%;
+  flex: 0 0 62%;
   min-width: 0;
+  scroll-snap-align: center;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  opacity: 0.55;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-.reel-slide video {
+.reel-slide.is-active {
+  opacity: 1;
+  cursor: auto;
+}
+
+.reel-slide video,
+.reel-stat {
   display: block;
   width: 100%;
   height: auto;
@@ -323,53 +347,143 @@ main img {
   background: #111;
 }
 
-.reel-slide p {
-  min-height: 4.9rem;
-  margin: 0.55rem 0 0;
-}
-
-.reel-bar {
+.reel-stat {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-top: 0.15rem;
+  justify-content: center;
+  gap: 0.15rem;
+  background: linear-gradient(135deg, #0645ad, #3a1c71);
+  color: #fff;
+  text-align: center;
 }
 
-.reel-bar button {
+.reel-stat strong {
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.reel-stat span {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.reel-slide p {
+  margin: 0;
+  padding: 0.7rem 0.85rem 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.reel-arrow {
+  position: absolute;
+  top: calc(0.25rem + 62cqw * 9 / 32);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0;
-  border: 0;
-  background: none;
-  color: var(--accent);
-  font: inherit;
-  font-size: 0.95rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+}
+
+.reel-arrow svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.reel-arrow:hover {
+  color: var(--accent);
+}
+
+.reel-arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reel-prev {
+  left: -0.6rem;
+}
+
+.reel-next {
+  right: -0.6rem;
 }
 
 .reel-dots {
   display: flex;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
 }
 
 .reel-dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
   border: 0;
-  border-radius: 50%;
-  background: rgba(28, 25, 23, 0.35);
+  background: none;
+  cursor: pointer;
 }
 
-html[data-theme="dark"] .reel-dot {
-  background: rgba(244, 241, 238, 0.4);
+.reel-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: rgba(28, 25, 23, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, background 0.25s ease;
 }
 
-.reel-dot[aria-current="true"] {
+html[data-theme="dark"] .reel-dot::after {
+  background: rgba(244, 241, 238, 0.35);
+}
+
+.reel-dot[aria-current="true"]::after {
+  width: 1.25rem;
   background: var(--accent);
 }
 
+@media (max-width: 560px) {
+  .reel-slide {
+    flex-basis: 82%;
+  }
+
+  .reel-arrow {
+    top: calc(0.25rem + 82cqw * 9 / 32);
+  }
+
+  .reel-prev {
+    left: 0.25rem;
+  }
+
+  .reel-next {
+    right: 0.25rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reel-track {
+  .reel-slide,
+  .reel-dot::after {
     transition: none;
   }
 }
