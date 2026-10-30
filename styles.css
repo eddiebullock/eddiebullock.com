@@ -334,7 +334,7 @@ main img {
 }
 
 .reel-slide video,
-.reel-stat {
+.reel-logos {
   display: block;
   width: 100%;
   height: auto;
@@ -347,27 +347,42 @@ main img {
   background: #111;
 }
 
-.reel-stat {
+.reel-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+}
+
+.reel-logos img {
+  width: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.reel-logos > img {
+  height: clamp(2rem, 7cqw, 2.9rem);
+}
+
+.reel-isambard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.15rem;
-  background: linear-gradient(135deg, #0645ad, #3a1c71);
-  color: #fff;
-  text-align: center;
+  gap: 0.3rem;
+  color: #002f5f;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.reel-stat strong {
-  font-size: clamp(1.9rem, 7vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-}
-
-.reel-stat span {
-  font-size: 0.9rem;
-  opacity: 0.85;
+.reel-isambard img {
+  height: clamp(2.2rem, 8cqw, 3.2rem);
 }
 
 .reel-slide p {
