@@ -199,6 +199,41 @@
           <img class="noborder" src="/images/minimal-street.jpg" width="1024" height="543" alt="A Minimal delivery robot on a city street." loading="lazy" decoding="async">
         </picture>
       </div>
+      <h3>Highlights</h3>
+      <div class="reel" id="highlights">
+        <div class="reel-viewport">
+          <div class="reel-track">
+            <article class="reel-slide">
+              <video poster="/videos/minato.jpg" width="1280" height="720" muted playsinline loop preload="metadata" aria-label="Minato, Tokyo, assembling as a 3D simulation.">
+                <source src="/videos/minato.mp4" type="video/mp4">
+              </video>
+              <p>I led Minimal World Models v1. It compiles a real city into a metric 3D simulation, cheaply enough that the world is ready before the robot arrives. This is Minato, Tokyo.</p>
+            </article>
+            <article class="reel-slide">
+              <video poster="/videos/robot-drive.jpg" width="1280" height="534" muted playsinline loop preload="none" aria-label="The delivery robot driving in simulation.">
+                <source src="/videos/robot-drive.mp4" type="video/mp4">
+              </video>
+              <p>I built the open-loop and closed-loop evaluation pipelines that score the driving model in simulation before it runs on the robot.</p>
+            </article>
+            <article class="reel-slide">
+              <video poster="/videos/photoreal.jpg" width="1280" height="704" muted playsinline loop preload="none" aria-label="A photoreal drive through a simulated city street.">
+                <source src="/videos/photoreal.mp4" type="video/mp4">
+              </video>
+              <p>I built the photorealism pipeline that turns the simulator into driving video, keeping the motion and the street layout so the model can train on it.</p>
+            </article>
+          </div>
+        </div>
+        <div class="reel-bar">
+          <button type="button" data-dir="-1">Previous</button>
+          <div class="reel-dots">
+            <button type="button" class="reel-dot" aria-label="World models"></button>
+            <button type="button" class="reel-dot" aria-label="Evaluation"></button>
+            <button type="button" class="reel-dot" aria-label="Photorealism"></button>
+          </div>
+          <button type="button" data-dir="1">Next</button>
+        </div>
+      </div>
+      <p>I led the application for a UK government training grant of 20,000+ GPU hours, worth £50,000.</p>
       <p class="top"><a href="#top">↑ top</a></p>
     </section>
 
@@ -279,6 +314,35 @@
           localStorage.setItem("theme", dark ? "dark" : "light");
         } catch (e) {}
       });
+    })();
+    (function () {
+      var root = document.getElementById("highlights");
+      if (!root) return;
+      var track = root.querySelector(".reel-track");
+      var slides = root.querySelectorAll(".reel-slide");
+      var dots = root.querySelectorAll(".reel-dot");
+      var index = 0;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function show(next) {
+        index = (next + slides.length) % slides.length;
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        slides.forEach(function (slide, i) {
+          var video = slide.querySelector("video");
+          if (!video) return;
+          if (i === index && !reduce) video.play().catch(function () {});
+          else video.pause();
+        });
+        dots.forEach(function (dot, i) {
+          if (i === index) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+      }
+      root.querySelector("[data-dir='-1']").addEventListener("click", function () { show(index - 1); });
+      root.querySelector("[data-dir='1']").addEventListener("click", function () { show(index + 1); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener("click", function () { show(i); });
+      });
+      show(0);
     })();
   </script>
 </body>

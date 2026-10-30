@@ -17,9 +17,14 @@ I work closely with [Emteq Labs](https://www.emteqlabs.com/). They make non-inva
 
 I am working on a vision-language-action model for an autonomous delivery robot. I am building the pipelines for data collection and training, fine-tuning the model for deployment, collecting synthetic data, and developing the simulation environment.
 
-Minimal: https://minimal.tech
+Highlights:
 
-The simulation image on the site is a stand-in until real footage is added.
+- I led Minimal World Models v1. It compiles a real city into a metric 3D simulation, cheaply enough that the world is ready before the robot arrives.
+- I built the open-loop and closed-loop evaluation pipelines that score the driving model in simulation before it runs on the robot.
+- I built the photorealism pipeline that turns the simulator into driving video, keeping the motion and the street layout so the model can train on it.
+- I led the application for a UK government training grant of 20,000+ GPU hours, worth £50,000.
+
+Minimal: https://minimal.tech
 
 ## Writing and science communication
 

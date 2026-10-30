@@ -290,6 +290,90 @@ main img {
   border: 0;
 }
 
+.reel {
+  margin: 0 0 0.85rem;
+}
+
+.reel-viewport {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.reel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.reel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.reel-slide video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  background: #111;
+}
+
+.reel-slide p {
+  min-height: 4.9rem;
+  margin: 0.55rem 0 0;
+}
+
+.reel-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.reel-bar button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.reel-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.reel-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(28, 25, 23, 0.35);
+}
+
+html[data-theme="dark"] .reel-dot {
+  background: rgba(244, 241, 238, 0.4);
+}
+
+.reel-dot[aria-current="true"] {
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-track {
+    transition: none;
+  }
+}
+
 img.full {
   max-height: none;
   height: auto;
