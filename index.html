@@ -4,12 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H12RR1FSZC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H12RR1FSZC');
-  </script>
+  <script src="/js/analytics.js"></script>
   <title>Eddie Bullock | PhD researcher at the University of Cambridge</title>
   <meta name="description" content="PhD researcher at the University of Cambridge working on vision-language models of social interaction. Writer read by 58,000+ people.">
   <meta name="author" content="Eddie Bullock">
@@ -37,15 +32,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/images/headshot-square.jpg">
   <link rel="preload" href="/images/headshot-square.webp" as="image" type="image/webp">
-  <script>
-    (function () {
-      try {
-        if (localStorage.getItem("theme") === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }
-      } catch (e) {}
-    })();
-  </script>
+  <script src="/js/theme-init.js"></script>
   <link rel="stylesheet" href="/styles.css?v=3">
   <script type="application/ld+json">
   {
@@ -298,107 +285,6 @@
   <footer>
     <p>© 2026 Eddie Bullock · <a href="mailto:eb2007@cam.ac.uk">eb2007@cam.ac.uk</a></p>
   </footer>
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var button = document.getElementById("theme");
-      function apply(dark) {
-        if (dark) root.setAttribute("data-theme", "dark");
-        else root.removeAttribute("data-theme");
-        if (button) {
-          button.setAttribute("aria-pressed", dark ? "true" : "false");
-          button.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-        }
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", dark ? "#141210" : "#fbfaf9");
-      }
-      apply(root.getAttribute("data-theme") === "dark");
-      if (!button) return;
-      button.addEventListener("click", function () {
-        var dark = root.getAttribute("data-theme") !== "dark";
-        apply(dark);
-        try {
-          localStorage.setItem("theme", dark ? "dark" : "light");
-        } catch (e) {}
-      });
-    })();
-    (function () {
-      var root = document.getElementById("highlights");
-      if (!root) return;
-      var viewport = root.querySelector(".reel-viewport");
-      var slides = Array.prototype.slice.call(root.querySelectorAll(".reel-slide"));
-      var dots = root.querySelectorAll(".reel-dot");
-      var prev = root.querySelector(".reel-prev");
-      var next = root.querySelector(".reel-next");
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var index = -1;
-      var visible = true;
-      function offset(i) {
-        var slide = slides[i];
-        var max = viewport.scrollWidth - viewport.clientWidth;
-        var left = slide.offsetLeft - slides[0].offsetLeft + slide.offsetWidth / 2 - viewport.clientWidth / 2;
-        return Math.max(0, Math.min(max, left));
-      }
-      function go(i) {
-        i = Math.max(0, Math.min(slides.length - 1, i));
-        viewport.scrollTo({ left: offset(i), behavior: reduce ? "auto" : "smooth" });
-      }
-      function sync() {
-        var left = viewport.scrollLeft;
-        var max = viewport.scrollWidth - viewport.clientWidth;
-        var best = 0;
-        slides.forEach(function (slide, i) {
-          if (Math.abs(offset(i) - left) < Math.abs(offset(best) - left)) best = i;
-        });
-        prev.disabled = left <= 2;
-        next.disabled = left >= max - 2;
-        if (best === index) return;
-        index = best;
-        slides.forEach(function (slide, i) {
-          slide.classList.toggle("is-active", i === index);
-          var video = slide.querySelector("video");
-          if (!video) return;
-          if (i === index && visible && !reduce) {
-            video.preload = "auto";
-            video.play().catch(function () {});
-          } else video.pause();
-        });
-        dots.forEach(function (dot, i) {
-          if (i === index) dot.setAttribute("aria-current", "true");
-          else dot.removeAttribute("aria-current");
-        });
-      }
-      var pending = false;
-      viewport.addEventListener("scroll", function () {
-        if (pending) return;
-        pending = true;
-        requestAnimationFrame(function () {
-          pending = false;
-          sync();
-        });
-      }, { passive: true });
-      prev.addEventListener("click", function () { go(index - 1); });
-      next.addEventListener("click", function () { go(index + 1); });
-      dots.forEach(function (dot, i) {
-        dot.addEventListener("click", function () { go(i); });
-      });
-      slides.forEach(function (slide, i) {
-        slide.addEventListener("click", function () { if (i !== index) go(i); });
-      });
-      viewport.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1); }
-        if (e.key === "ArrowRight") { e.preventDefault(); go(index + 1); }
-      });
-      window.addEventListener("resize", function () { index = -1; sync(); });
-      if ("IntersectionObserver" in window) {
-        new IntersectionObserver(function (entries) {
-          visible = entries[0].isIntersecting;
-          index = -1;
-          sync();
-        }, { threshold: 0.25 }).observe(root);
-      }
-      sync();
-    })();
-  </script>
+  <script src="/js/site.js"></script>
 </body>
 </html>
