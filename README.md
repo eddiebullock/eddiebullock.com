@@ -1,6 +1,10 @@
 # eddiebullock.com
 
-Static personal site. One HTML file, one stylesheet, no build step, no JavaScript.
+Static personal site. One HTML file, one stylesheet, a few small scripts in `js/`, no build step.
+
+## Security headers
+
+`_worker.js` adds a Content-Security-Policy, HSTS and anti-framing headers to every response. The policy only allows scripts from this site and Google Analytics, so do not add inline `<script>` blocks, `onclick` attributes or inline `style=""` attributes: put code in `js/` and styles in `styles.css`. Loading anything from a new external domain means adding that domain to the policy in `_worker.js`.
 
 ## Preview locally
 
