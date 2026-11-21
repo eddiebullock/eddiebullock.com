@@ -13,7 +13,7 @@ Publications are available on [Google Scholar](https://scholar.google.com/citati
 
 I work closely with [Emteq Labs](https://www.emteqlabs.com/). They make non-invasive human-computer interfaces.
 
-## AI engineering internship at Minimal
+## AI engineering at Minimal
 
 I am working on a vision-language-action model for an autonomous delivery robot. I am building the pipelines for data collection and training, fine-tuning the model for deployment, collecting synthetic data, and developing the simulation environment.
 
